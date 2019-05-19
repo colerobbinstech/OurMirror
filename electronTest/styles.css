@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Macondo+Swash+Caps&display=swap');
+body {
+	background-color: black;
+}
+h1 {
+	color: white;
+	font-family: 'Macondo Swash Caps', cursive;
+	font-size: 1000%;
+}
+p {
+	color: white;
+	font-family: 'Macondo Swash Caps', cursive;
+	font-size: 1000%;
+}
