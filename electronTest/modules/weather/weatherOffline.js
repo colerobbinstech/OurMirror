@@ -1,9 +1,3 @@
-let request = require('request');
-
-let apiKey = 'X3LWLT8QoGZ1mh8NAFuH01icVANR9yGp';
-let city = '20905_PC';
-let url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${city}?apikey=${apiKey}&language=en-us&details=true`;
-
 function imagePicker(id, day) {
 	let path = "./images/weather/";
 	id = Number(id);
@@ -18,11 +12,10 @@ function imagePicker(id, day) {
 	return path;
 }
 
-function setWeather(day, weather) {
-	let data = weather.DailyForecasts[day];
-	let id = data.Day.Icon;
-	let tempMin = data.Temperature.Minimum.Value;
-	let tempMax = data.Temperature.Maximum.Value;
+function setWeather(day) {
+	let id = 1;
+	let tempMin = 60;
+	let tempMax = 80;
 	var Day = document.createTextNode(getDays(day));
 	var Min = document.createTextNode(tempMin);
 	var Max = document.createTextNode(tempMax);
@@ -53,15 +46,8 @@ function getDays (day) {
 	return days[(currDay + day) % 7];
 }
 
-request(url, function(err, response, body) {
-	if(err){
-	} else {
-		let weather = JSON.parse(body);
-		let day = 0;
-		for(day; day < 5; day++){
-			setWeather(day, weather);
-		}
-		
-	}
-});
+let day = 0;
+for(day; day < 5; day++){
+	setWeather(day);
+}
 

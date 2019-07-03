@@ -11,10 +11,14 @@ p {
 	color: white;
 	font-family: 'Cairo';
 	font-size: 500%;
+	margin: auto;
 }
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
+tr {
+	width: 10%;
+	margin: auto;
+}
+td {
+	width: 10%;
+	outline: 2px solid white;
+	margin: auto;
 }
